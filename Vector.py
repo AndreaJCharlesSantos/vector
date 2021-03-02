@@ -12,8 +12,9 @@ class Vector (object):
 			for num2 in copyVectorcito:
 				if (num == num2):
 					res = res+1	
-		print(res)
 		return res
+
+
 	def OperatoriBtLeft(self, copyv):
 		pass
 
@@ -25,7 +26,8 @@ lista = [1,2,3,4,5,6,7,8,9]
 vectorcito = Vector(lista)
 copyVectorcito = copy.deepcopy(lista)
 print(res)
-vectorcito.IsEqual(res)
+res = vectorcito.IsEqual(res)
 print(res)
+
 
 
