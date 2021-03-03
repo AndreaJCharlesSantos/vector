@@ -5,29 +5,61 @@ class Vector (object):
 
 	def ListToString(self):
 		return "{}".format(self.vector)
-
-	def IsEqual(self,res):
+	#==
+	def IsEqual(self,a,res,lista1,lista2):
 		res = 0
-		for num in lista:
-			for num2 in copyVectorcito:
+		for num in lista1:
+			for num2 in lista2:
 				if (num == num2):
-					res = res+1	
-		return res
+					res = res+1
+		if (res == a):	
+			return True
+		return False
+	#!=
+	def IsNotEqual(self,res):
+		return not(res)
+	#Operador <<
+	def OperatoriBtLeft(self,lista1):
+		answer = 0
+		cont = 0
+		sent = []
+		copyVectorcito = copy.deepcopy(lista1)
+		for i in copyVectorcito:
+			cont += 1			
+			answer = i << cont
+			sent.append(answer)
+		return sent
 
+	def OperatorBitRigth(self, lista1):
+		answer = 0
+		cont = 0
+		sent = []
+		copyVectorcito = copy.deepcopy(lista1)
+		print(copyVectorcito)
+		for i in copyVectorcito:
+			print(i)
+			cont += 1
+			print(cont)			
+			answer = i >> cont
+			sent.append(answer)
+		return sent	
 
-	def OperatoriBtLeft(self, copyv):
-		pass
+	def main():	
+		res = False
+		Right =[]
+		Left= []
+		lista1 = [1,2,3,4,5,6,7,8,9]
+		lista2 = [1,2,3,4,5,6,7,10,9]
+		vectorcito = Vector(lista1)
+		vectorcito2 = Vector(lista2)
+		a = len(lista1)
+		res = vectorcito.IsEqual(a,res,lista1,lista2)
+		print(res)
+		Left = vectorcito.OperatoriBtLeft(lista1)
+		for i in Left:
+			print(i)
 
-	def OperatorBitRigth(self, copyv):
-		pass
 #Inicio
-res = 0
-lista = [1,2,3,4,5,6,7,8,9]
-vectorcito = Vector(lista)
-copyVectorcito = copy.deepcopy(lista)
-print(res)
-res = vectorcito.IsEqual(res)
-print(res)
-
-
-
+if __name__ == '__main__':
+    Vector.main()
+    pass
