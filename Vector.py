@@ -3,6 +3,13 @@ class Vector (object):
 	def __init__(self, vector):
 		self.vector = vector
 
+	def Index(self,lista1,num):
+		try:
+			return lista[num]
+		except:
+			return -1
+		pass
+
 	def ListToString(self):
 		return "{}".format(self.vector)
 	#==
@@ -12,7 +19,7 @@ class Vector (object):
 			for num2 in lista2:
 				if (num == num2):
 					res = res+1
-		if (res == a):	
+		if (res == a):
 			return True
 		return False
 	#!=
@@ -48,18 +55,24 @@ class Vector (object):
 		res = False
 		Right =[]
 		Left= []
+		#num = 10
 		lista1 = [1,2,3,4,5,6,7,8,9]
-		lista2 = [1,2,3,4,5,6,7,10,9]
+		lista2 = [1,2,3,4,5,6,7,8,9]
 		vectorcito = Vector(lista1)
 		vectorcito2 = Vector(lista2)
 		a = len(lista1)
 		res = vectorcito.IsEqual(a,res,lista1,lista2)
+		res = vectorcito.IsNotEqual(res)
 		print(res)
 		Left = vectorcito.OperatoriBtLeft(lista1)
 		for i in Left:
 			print(i)
+		print(vectorcito.Index(lista1,10))
 
 #Inicio
 if __name__ == '__main__':
     Vector.main()
     pass
+
+
+
